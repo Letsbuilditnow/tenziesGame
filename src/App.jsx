@@ -15,6 +15,9 @@ function createDice(){
   }
   return arr;
 }
+function diceRoll(){
+  setDice(createDice())
+}
 
 
   
@@ -32,7 +35,7 @@ function createDice(){
       
      
 
-          <button className='roll'>ROLL</button>
+          <button className='roll' onClick={diceRoll}>ROLL</button>
         
     </main>
     </div>
