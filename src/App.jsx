@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+// 
+import React from 'react'
 import './App.css'
+// 
 
 function App() {
   
@@ -8,7 +9,18 @@ function App() {
   return (
     <div className="App">
     <main className='Main'>
-
+    <div className="container">
+            <button>1</button>
+            <button>1</button>
+            <button>1</button>
+            <button>1</button>
+            <button>1</button>
+            <button>1</button>
+            <button>1</button>
+            <button>1</button>
+            <button>1</button>
+            <button>1</button>
+        </div>
     </main>
     </div>
   )
