@@ -5,11 +5,21 @@ import Die from './Die'
 // 
 
 function App() {
+const [dice,setDice]=React.useState(createDice())
 
-   
-  let arr=[1,2,3,4]
-  const dieElements = arr.map(die=>{
-     return <Die/>
+
+function createDice(){
+  let arr=[];
+  for(let i=0;i<10;i++){
+   arr.push(Math.ceil(Math.random()*6)) 
+  }
+  return arr;
+}
+
+
+  
+  const dieElements = dice.map(die=>{
+     return <Die value={die}/>
   })
 
   return (
@@ -17,7 +27,7 @@ function App() {
     <main className='Main'>
     <div className="container">
             {dieElements}
-          
+          <button>ROLL</button>
         </div>
     </main>
     </div>

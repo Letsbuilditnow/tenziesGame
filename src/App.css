@@ -28,7 +28,7 @@
   grid-template-columns: repeat(5, 1fr);
   gap:5px;
   /* background-color: #0B2434; */
-  width: 100%;
+  width: 98%;
   row-gap: 10px;
   padding-left: 6%;
 }.container button{
