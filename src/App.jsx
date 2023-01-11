@@ -27,8 +27,13 @@ function createDice(){
     <main className='Main'>
     <div className="container">
             {dieElements}
-          <button>ROLL</button>
         </div>
+       
+      
+     
+
+          <button className='roll'>ROLL</button>
+        
     </main>
     </div>
   )

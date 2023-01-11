@@ -21,14 +21,15 @@
   height:80%;
   background-color: #F5F5F5;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }.container{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap:5px;
   /* background-color: #0B2434; */
-  width: 98%;
+  width: 100%;
   row-gap: 10px;
   padding-left: 6%;
 }.container button{
@@ -36,4 +37,17 @@
   height: 36px;
   width: 36px;
   font-family:'karla' ;
+  box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+border-radius: 3.81277px;
+}
+  .roll {
+  
+ 
+  font-family: 'Courier New', Courier, monospace;
+  width: 20%;
+  height: 8%;
+  color: white;
+  background-color:#5035FF;
+  box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+border-radius: 3.81277px;
 }
