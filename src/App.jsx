@@ -72,8 +72,8 @@ function App() {
   return (
     <div className="App">
       <div className="celebration">
-
         {tenzies&&<Confetti/>}
+
     </div>
       <main className="Main">
         <div className="heading">
@@ -81,10 +81,15 @@ function App() {
         <h1>Tenzies</h1>
         <p>Roll Until All Dice Are The Same. Click each die to freeze it at its current value between rolls.</p>
         </div>
-        <div className="container">{dieElements}</div>
+        <div className="container">
+
+        {dieElements}
+        </div>
 
         <button className="roll" onClick={diceRoll}>
-          {tenzies?"Play Again":"ROLL"}
+         <span>
+           {tenzies?"Play Again":"ROLL"}
+          </span>
         </button>
       </main>
     </div>

@@ -7,9 +7,9 @@ export default function Die(props){
         backgroundColor:props.isHold?"#59E391":"white"
     }
     return(
-        <div className="container">
+        <>
             <button style={styles} onClick={props.holdIt}><span>{props.value}</span></button>
             
-        </div>
+        </>
     )
 }
