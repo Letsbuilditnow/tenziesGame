@@ -3,6 +3,7 @@ import React from "react";
 import "./App.css";
 import Die from "./Die";
 import { v4 as uuid } from "uuid";
+import Confetti from 'react-confetti'
 //
 
 function App() {
@@ -65,10 +66,11 @@ function App() {
   return (
     <div className="App">
       <main className="Main">
+        {tenzies&&<Confetti/>}
         <div className="container">{dieElements}</div>
 
         <button className="roll" onClick={diceRoll}>
-          ROLL
+          {tenzies?"Play Again":"ROLL"}
         </button>
       </main>
     </div>
