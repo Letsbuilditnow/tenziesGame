@@ -13,16 +13,27 @@ function App() {
   function createDice() {
     let arr = [];
     for (let i = 0; i < 10; i++) {
-      arr.push([
+      arr.push(
         {
           id: uuid(),//Creates A Unique Id
           value: Math.ceil(Math.random() * 6),
-          isHOld: true,
+          isHold: true,
         },
-      ]);
+      );
     }
     return arr;
   }
+  function holdIt(id){
+    setDice(prevDice=>{
+
+      return prevDice.map(die=>{
+        return die.id===id?{...die,isHold:!die.isHold}:die
+      })
+    }
+
+    )
+  }
+
   // console.log(dice)
   //Create the function to change the values everytime the roll button is clicked
   function diceRoll() {
@@ -31,7 +42,7 @@ function App() {
   //Map through the values of the dice state and pass the value as props to the single component
   const dieElements = dice.map((die) => {
     console.log(die);
-    return <Die value={die[0].value} isHOld={die[0].isHOld} />;
+    return <Die value={die.value} isHold={die.isHold} holdIt={()=>{holdIt(die.id)}} />;
   });
 
   return (
