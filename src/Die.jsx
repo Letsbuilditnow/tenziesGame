@@ -8,7 +8,7 @@ export default function Die(props){
     }
     return(
         <div className="container">
-            <button style={styles} onClick={props.holdIt}>{props.value}</button>
+            <button style={styles} onClick={props.holdIt}><span>{props.value}</span></button>
             
         </div>
     )
