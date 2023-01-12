@@ -50,12 +50,18 @@ function App() {
   // console.log(dice)
   //Create the function to change the values everytime the roll button is clicked
   function diceRoll() {
-    setDice(prevDice=>{
-      return prevDice.map(die=>{
-        return die.isHold==true?die:{...die, id: uuid(), value: Math.ceil(Math.random() * 6)}
-      })
-    }
+    if(!tenzies){
+
+      setDice(prevDice=>{
+        return prevDice.map(die=>{
+          return die.isHold==true?die:{...die, id: uuid(), value: Math.ceil(Math.random() * 6)}
+        })
+      }
       );
+    }else{
+      setTenzies(false);
+      setDice(createDice())
+    }
   }
   //Map through the values of the dice state and pass the value as props to the single component
   const dieElements = dice.map((die) => {
