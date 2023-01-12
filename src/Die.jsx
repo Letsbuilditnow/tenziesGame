@@ -4,7 +4,7 @@ export default function Die(props){
     // console.log(props)
     
     const styles={
-        backgroundColor:props.isHold?"blue":"white"
+        backgroundColor:props.isHold?"#59E391":"white"
     }
     return(
         <div className="container">

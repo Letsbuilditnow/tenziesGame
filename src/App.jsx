@@ -71,8 +71,11 @@ function App() {
 
   return (
     <div className="App">
-      <main className="Main">
+      <div className="celebration">
+
         {tenzies&&<Confetti/>}
+    </div>
+      <main className="Main">
         <div className="heading">
 
         <h1>Tenzies</h1>
