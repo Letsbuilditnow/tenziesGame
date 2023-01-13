@@ -4,6 +4,7 @@ import "./App.css";
 import Die from "./Die";
 import { v4 as uuid } from "uuid";
 import Confetti from 'react-confetti'
+import Scores from "./Scores";
 //
 
 function App() {
@@ -92,6 +93,7 @@ function App() {
           </span>
         </button>
       </main>
+      <Scores/>
     </div>
   );
 }
