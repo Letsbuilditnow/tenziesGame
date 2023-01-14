@@ -14,6 +14,7 @@ function App() {
   const [dice, setDice] = React.useState(createDice());
   const [tenzies,setTenzies]=React.useState(false)
   const [scores,setScores]=React.useState(0)
+  const[highscore,setHighScore]=React.useState()
 
   React.useEffect(()=>{
     if(tenzies){
@@ -21,10 +22,13 @@ function App() {
 
       storage.push(scores)
       
-
+      let arraySort=storage.sort((a,b)=>a-b);
+      let highScore=arraySort[0]
+      setHighScore(highScore)
       localStorage.setItem('scores',JSON.stringify(storage))
-
-
+      
+      
+      console.log(highScore)
     }
   },[tenzies])
 
@@ -113,7 +117,7 @@ function App() {
         </button>
       </main>
       {tenzies&&
-      <Scores Scores={scores}/>
+      <Scores Scores={scores} highScore={highscore}/>
     }
     </div>
   );

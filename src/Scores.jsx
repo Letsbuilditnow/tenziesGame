@@ -6,6 +6,8 @@ export default function Scores(props){
         <div className='Scores Main'>
 
             Your Score: {props.Scores}
+            <br />
+            High Score: {props.highScore}
         </div>
         
         
