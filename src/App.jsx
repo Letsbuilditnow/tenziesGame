@@ -5,13 +5,28 @@ import Die from "./Die";
 import { v4 as uuid } from "uuid";
 import Confetti from 'react-confetti'
 import Scores from "./Scores";
+
 //
 
 function App() {
+ 
   //Setup a state to store the value of the dice.
   const [dice, setDice] = React.useState(createDice());
   const [tenzies,setTenzies]=React.useState(false)
   const [scores,setScores]=React.useState(0)
+
+  React.useEffect(()=>{
+    if(tenzies){
+      let storage=JSON.parse(localStorage.getItem('scores'))||[]
+
+      storage.push(scores)
+      
+
+      localStorage.setItem('scores',JSON.stringify(storage))
+
+
+    }
+  },[tenzies])
 
   React.useEffect(()=>{
    let firstValue=dice[0].value;
@@ -52,8 +67,8 @@ function App() {
   // console.log(dice)
   //Create the function to change the values everytime the roll button is clicked
   function diceRoll() {
-    setScores(prevScore=>prevScore+1)
     if(!tenzies){
+      setScores(prevScore=>prevScore+1)
 
       setDice(prevDice=>{
         return prevDice.map(die=>{
